@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Sign In</title>
+        <link rel="stylesheet" href="signin.css">
+        <link rel="icon" href="images\titleLogo.png" type="image/png" sizes="19x19">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const skipBtn = document.getElementById('skip-btn');
+                const signinORupBtn = document.getElementById('signinORup-btn');
+
+                skipBtn.addEventListener('click', function() {
+                    window.location.href = 'Front_End.html';
+                });
+
+                signinORupBtn.addEventListener('click', function() {
+                    window.location.href = 'signup.html';
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="containerLog">
+        <img id="loginpicture" src="images/LOGINPICTURE.png" alt="MedMeal Logo">
+        <h3 id="heading">Welcome Back!</h3>
+        <p>Sign in to see your saved recommendation</p>
+        <form class="signin" action="SignIn.php" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="eg : johnjoe67@gmail.com" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button id="SignInSignUp-btn" type="submit">Sign In</button><br>
+            <button id="skip-btn" type="button" >Skip for now</button>
+            <button id="signinORup-btn" type="button" >Don't have an account? Sign up now</button>
+        </form>
+        </div>   
+    </body>
+</html>

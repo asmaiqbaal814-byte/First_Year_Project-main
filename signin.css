@@ -1,0 +1,110 @@
+.body {
+    margin: 0;
+    padding: 0;
+    background-color: #E7FFFA;
+    font-family: 'Noto Sans Sinhala', sans-serif;
+}
+.containerLog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 135vh;
+}
+
+.containerLog #heading{
+    color: #009873;
+    font-weight: bolder;
+    font-size: 36px;
+    margin-top: 3px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.containerLog p{
+    color: #555;
+    font-size: 18px;
+    margin-top: -10px;
+    font-family: 'Noto Sans Sinhala', sans-serif;
+}
+.containerLog img{
+    width: 140px;
+    margin-top: 10px;
+}
+.signin{
+    background-color: #fff;
+    padding: 70px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* text-align: center; */
+}
+.signin label{
+    color: #000000;
+    font-family: 'Noto Sans Sinhala', sans-serif;
+}
+.signin #email,
+.signin #password,
+.signin #name {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 0.5px solid #6b6b6b;
+    border-radius: 10px;
+    color: #3C4658;
+    font-family: 'Noto Sans Sinhala', sans-serif;
+}
+#SignInSignUp-btn{
+    background-color: #009873;
+    color: #fff;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+#SignInSignUp-btn,
+#skip-btn {
+    transition: transform 0.2s ease;
+}
+
+#SignInSignUp-btn:hover,
+#skip-btn:hover {
+    transform: scale(1.05);
+}
+
+#SignInSignUp-btn:active ,
+#skip-btn:active{
+    box-shadow: #019C78 0px 0px 0px 0px;
+    transform: translateY(4px);
+    transition: 100ms;
+}
+
+#skip-btn {
+    background-color: transparent;
+    color: #009873;
+    border: 2px solid #009873;
+    padding: 14px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#signinORup-btn {
+    background-color: transparent;
+    color: #009873;
+    border: none;
+    padding: 14px 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+}
+#signinORup-btn:hover {
+    text-decoration: underline;
+}
+
+#signinORup-btn:active{
+    transform: scale(1.05);
+}
