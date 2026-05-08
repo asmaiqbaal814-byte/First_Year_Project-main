@@ -743,11 +743,7 @@ recommend(Diseases, AgeGroup, Preference, Allergies) :-
     forall(member(D-Info, NutritionList),
         (write('  ['), write(D), write(']: '), write(Info), nl)),
     nl, write('=== HEALTH TIP ==='), nl,
-    write(Tip), nl,
-    write('------------------------------------------------------------'), nl,
-    write('*** DISCLAIMER: Educational tool only.                    ***'), nl,
-    write('*** Always consult your doctor or registered nutritionist.***'), nl,
-    write('============================================================'), nl.
+    write(Tip), nl.
 
 % ================================
 % ERROR HANDLING
