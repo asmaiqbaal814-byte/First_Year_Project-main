@@ -13,10 +13,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-form {
-    flex: 1;
-}
-
 /* Top controls */
 .login-btn #signin {
     position: absolute;
@@ -296,7 +292,6 @@ footer {
     h1 {
         font-size: 32px;
     }
-
 
     .logo {
         width: 80px;
