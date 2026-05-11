@@ -1,4 +1,5 @@
 <?php
+session_start();
 header('Content-Type: application/json');
 
 function map_disease(string $raw): string {
@@ -115,6 +116,28 @@ function parse_nutrition(array $lines): array {
 
 $tip_raw = extract_block('=== HEALTH TIP ===', $output);
 
+$recommendedFoods = extract_block('=== HIGHLY RECOMMENDED FOODS ===', $output);
+
+if (isset($_SESSION['user_name']) && !empty($recommendedFoods)) {
+    if (!isset($_SESSION['user_recommendations']) || !is_array($_SESSION['user_recommendations'])) {
+        $_SESSION['user_recommendations'] = [];
+    }
+    foreach ($recommendedFoods as $item) {
+        if (!in_array($item, $_SESSION['user_recommendations'], true)) {
+            $_SESSION['user_recommendations'][] = $item;
+        }
+    }
+
+    if (!isset($_SESSION['recommendation_history']) || !is_array($_SESSION['recommendation_history'])) {
+        $_SESSION['recommendation_history'] = [];
+    }
+    $_SESSION['recommendation_history'][] = [
+        'timestamp'  => date('Y-m-d H:i:s'),
+        'conditions' => $disease_labels,
+        'foods'      => $recommendedFoods,
+    ];
+}
+
 echo json_encode([
     'success'     => true,
     'skipped'     => $skipped,
@@ -129,7 +152,7 @@ echo json_encode([
         'dinner'    => extract_line('DINNER',        $output),
         'beverage'  => extract_line('BEVERAGE',      $output),
     ],
-    'recommended' => extract_block('=== HIGHLY RECOMMENDED FOODS ===', $output),
+    'recommended' => $recommendedFoods,
     'avoid'       => extract_block('=== FOODS TO AVOID ===',           $output),
     'nutrition'   => parse_nutrition(extract_block('=== NUTRITION TARGETS ===', $output)),
     'tip'         => implode(' ', $tip_raw),

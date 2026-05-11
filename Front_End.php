@@ -355,6 +355,9 @@ session_start();
         function navigateToSignIn() {
             window.location.href = 'signin.html';
         }
+        function userProfile() {
+            alert("User profile functionality coming soon!");
+        }
         function setActiveSearchButton(buttonId) {
             document.querySelectorAll('.search-option').forEach(btn => {
                 btn.classList.toggle('active', btn.id === buttonId);
@@ -596,13 +599,9 @@ session_start();
 <body>
     <nav class="login-btn">
     <?php if (isset($_SESSION['user_name'])): ?>
-        <p class="user-name">
-            👤<?php echo $_SESSION['user_name']; ?>
-        </p>
-    <?php elseif(isset($_SESSION['user_email'])): ?>
-        <p class="user-name">
-            👤 <?php echo substr($_SESSION['user_email'], 0, 6); ?>
-        </p>
+        <button class="user-name" onclick="window.location.href='userProfile.php'">
+            👤 <?php echo htmlspecialchars($_SESSION['user_name'], ENT_QUOTES, 'UTF-8'); ?>
+        </button>
     <?php else: ?>
         <button type="button" id="signin" onclick="navigateToSignIn()">
         </button>
@@ -690,7 +689,7 @@ session_start();
 
             <!-- Divider + results live INSIDE form-group so they stay above footer -->
             <div id="result-divider" class="result-divider">Your Meal Plan</div>
-            <div id="results"></div>
+            <div id="results" method="post"></div>
         </div>
 
     <footer>
