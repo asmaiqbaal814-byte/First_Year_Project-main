@@ -111,11 +111,8 @@ h1 {
     height: auto;
     margin-top: 20px;
     margin-right: -25px;
-}
-
-p {
-    font-size: 18px;
-    color: #555;
+        /* border-radius: 50%;
+        object-fit: cover; */
     margin-top: -10px;
 }
 
@@ -127,7 +124,7 @@ p {
 
 /* Form layout */
 .form-group {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -196,7 +193,7 @@ button:active {
 .search-box #diseaseInput {
     width: 93%;
     padding: 10px;
-    border: 2px solid #019C78;
+    border: 1px solid #019C78;
     border-radius: 10px;
     font-size: 16px;
 }
@@ -204,22 +201,49 @@ button:active {
 .additionalFilters {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 15px;
-    border-color: #019C78;
-}
+        gap: 18px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }
 
-.additionalFilters select {
-    flex: 1 1 220px;
-    width: 32%;
-    padding: 10px;
-    border: 2px solid #019C78;
-    border-radius: 10px;
-    font-size: 16px;
-}
+    .additionalFilters select,
+    .search-box select,
+    .search-box input {
+        flex: 1 1 220px;
+        width: 100%;
+        /* max-width: 320px; */
+        padding: 14px 18px;
+        border: 1px solid #d4e7df;
+        border-radius: 999px;
+        background: #F3F3F5;
+        color: #1a2e25;
+        font-size: 16px;
+        font-weight: 600;
+        outline: none;
+        box-shadow: 0 12px 28px rgba(1, 156, 120, 0.08);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+    }
 
-/* Add disease button */
+    .additionalFilters select {
+        width: 33%;
+        flex: 1 1 220px;
+        min-width: 180px;
+    }
+
+    .additionalFilters select:focus,
+    .search-box select:focus,
+    .search-box input:focus {
+        border-color: #019c78;
+        box-shadow: 0 18px 30px rgba(1, 156, 120, 0.16);
+        background: #ffffff;
+    }
+
+    .additionalFilters select::-ms-expand {
+        display: none;}
 .input-box #AddDiseaseButton {
     width: 45px;
     height: 45px;

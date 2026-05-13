@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedMeal</title>
-    <link rel="icon" href="images\titleLogo.png" type="image/png" sizes="19x19">
+    <link rel="icon" href="images/titleLogo.png" type="image/png" sizes="19x19" >
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Noto+Sans+Sinhala&display=swap" rel="stylesheet">
