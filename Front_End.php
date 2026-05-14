@@ -420,7 +420,7 @@ session_start();
             // Always keep description box hidden
             document.getElementById("diseaseDescription").style.display = "none";
 
-            if (diseases.length > 0 && Age_Group !== '' && VegORnonVeg !== '') {
+            if (diseases.length > 0 && Age_Group !== '' && VegORnonVeg !== '' && allergies !== '') {
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(() => {
                     autoGenerate(diseases, Age_Group, VegORnonVeg, allergies);
@@ -665,6 +665,7 @@ session_start();
 
                 <select id="allergies" onchange="diseaseDescription()">
                     <option value="">-- Select Allergy --</option>
+                    <option value="none">None (කිසිවක් නැත)</option>
                     <option value="sesame">Sesame (තල)</option>
                     <option value="eggs">Eggs (බිත්තර)</option>
                     <option value="milk">Milk / Dairy (කිරි)</option>
